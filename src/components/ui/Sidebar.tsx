@@ -38,15 +38,23 @@ const Sidebar = ({ user }: SidebarProps) => {
                 <Image
                   src={item.imgURL}
                   alt={item.label}
-                  className="sidebar-icon"
                   fill
+                  className={cn({
+                    "brightness-[3] invert-0": isActive,
+                  })}
                 />
               </div>
-              <span>{item.label}</span>
+              <span
+                className={cn("sidebar-label", { "!text-white": isActive })}
+              >
+                {item.label}
+              </span>
             </Link>
           );
         })}
+        User
       </nav>
+      Footer
     </section>
   );
 };
