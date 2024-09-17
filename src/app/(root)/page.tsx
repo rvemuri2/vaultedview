@@ -4,7 +4,11 @@ import TotalBalanceBox from "/src/components/ui/TotalBalanceBox";
 import RightSidebar from "/src/components/ui/RightSidebar";
 
 const Home = () => {
-  const loggedIn = { firstName: "Rohit" };
+  const loggedIn = {
+    firstName: "Rohit",
+    lastName: "Vemuri",
+    email: "rohitvemuri@yahoo.com",
+  };
   return (
     <section className="home">
       <div className="home-content">
@@ -23,7 +27,11 @@ const Home = () => {
         </header>
         RECENT TRANSACTIONS
       </div>
-      <RightSidebar user={loggedIn} transactions={[]} banks={[]} />
+      <RightSidebar
+        user={loggedIn}
+        transactions={[]}
+        banks={[{ currentBalance: 500.5 }, { currentBalance: 242.23 }]}
+      />
     </section>
   );
 };
