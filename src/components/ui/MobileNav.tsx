@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import hamburger from "/public/icons/hamburger.svg";
-import Icon from "/public/icons/logo.svg"; // Make sure to import Icon here
+import Icon from "/public/icons/logo.svg";
 import Link from "next/link";
 import { sidebarLinks } from "/constants/index.ts";
 import { cn } from "/lib/utils.ts";
