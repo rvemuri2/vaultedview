@@ -1,7 +1,7 @@
-import homeIcon from "/icons/home.svg";
-import dollarIcon from "/icons/dollar-circle.svg";
-import transactionIcon from "/icons/transaction.svg";
-import paymentIcon from "/icons/money-send.svg";
+import homeIcon from "/public/icons/home.svg";
+import dollarIcon from "/public/icons/dollar-circle.svg";
+import transactionIcon from "/public/icons/transaction.svg";
+import paymentIcon from "/public/icons/money-send.svg";
 export const sidebarLinks = [
   {
     imgURL: homeIcon,

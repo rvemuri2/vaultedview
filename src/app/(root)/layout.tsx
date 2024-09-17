@@ -1,7 +1,7 @@
 import Sidebar from "/src/components/ui/Sidebar";
 import MobileNav from "/src/components/ui/MobileNav";
 import Image from "next/image";
-import Icon from "/icons/logo.svg";
+import Icon from "/public/icons/logo.svg";
 
 export default function RootLayout({
   children,
