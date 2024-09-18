@@ -11,6 +11,7 @@ import { authFormSchema } from "/lib/utils.ts";
 import { Button } from "/src/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { signIn, signUp } from "/lib/actions/user.actions.ts";
 import {
   Form,
   FormControl,
