@@ -11,7 +11,7 @@ import { authFormSchema } from "/lib/utils.ts";
 import { Button } from "/src/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { signIn, signUp } from "/lib/actions/user.actions.ts";
+import { getLoggedInUser, signIn, signUp } from "/lib/actions/user.actions.ts";
 import {
   Form,
   FormControl,
@@ -48,11 +48,11 @@ const AuthForm = ({ type }: { type: string }) => {
         setUser(newUser);
       }
       if (type === "sign-in") {
-        // const response = await signIn({
-        //   email: data.email,
-        //   password: data.password,
-        // });
-        // if (response) router.push("/");
+        const response = await signIn({
+          email: data.email,
+          password: data.password,
+        });
+        if (response) router.push("/");
       }
     } catch (error) {
       console.log(error);
