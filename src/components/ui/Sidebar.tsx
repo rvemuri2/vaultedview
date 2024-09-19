@@ -6,6 +6,7 @@ import Icon from "/public/icons/logo.svg";
 import { sidebarLinks } from "/constants/index.ts";
 import { cn } from "/lib/utils.ts";
 import { usePathname } from "next/navigation";
+import Footer from "./Footer";
 
 const Sidebar = ({ user }: SidebarProps) => {
   const pathname = usePathname();
@@ -54,7 +55,7 @@ const Sidebar = ({ user }: SidebarProps) => {
         })}
         User
       </nav>
-      Footer
+      <Footer user={user} />
     </section>
   );
 };
