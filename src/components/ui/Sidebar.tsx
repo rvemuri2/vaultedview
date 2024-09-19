@@ -7,8 +7,9 @@ import { sidebarLinks } from "/constants/index.ts";
 import { cn } from "/lib/utils.ts";
 import { usePathname } from "next/navigation";
 import Footer from "./Footer";
+import PlaidLink from "./PlaidLink";
 
-const Sidebar = ({ user }: SidebarProps) => {
+const Sidebar = ({ user }: SiderbarProps) => {
   const pathname = usePathname();
 
   return (
@@ -19,21 +20,21 @@ const Sidebar = ({ user }: SidebarProps) => {
             src={Icon}
             width={34}
             height={34}
-            alt="VaultView"
-            className="size-[36px] max-xl:size-14"
+            alt="VaultedView"
+            className="size-[24px] max-xl:size-14"
           />
           <h1 className="sidebar-logo">VaultView</h1>
         </Link>
+
         {sidebarLinks.map((item) => {
           const isActive =
             pathname === item.route || pathname.startsWith(`${item.route}/`);
+
           return (
             <Link
               href={item.route}
               key={item.label}
-              className={cn("sidebar-link flex items-center gap-2", {
-                "bg-bank-gradient": isActive,
-              })}
+              className={cn("sidebar-link", { "bg-bank-gradient": isActive })}
             >
               <div className="relative size-6">
                 <Image
@@ -45,16 +46,16 @@ const Sidebar = ({ user }: SidebarProps) => {
                   })}
                 />
               </div>
-              <span
-                className={cn("sidebar-label", { "!text-white": isActive })}
-              >
+              <p className={cn("sidebar-label", { "!text-white": isActive })}>
                 {item.label}
-              </span>
+              </p>
             </Link>
           );
         })}
-        User
+
+        <PlaidLink user={user} />
       </nav>
+
       <Footer user={user} />
     </section>
   );

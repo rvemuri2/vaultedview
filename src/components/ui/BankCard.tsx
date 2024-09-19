@@ -5,6 +5,7 @@ import pay from "/public/icons/Paypass.svg";
 import mastercard from "/public/icons/mastercard.svg";
 import lines from "/public/icons/lines.png";
 import { formatAmount } from "/lib/utils.ts";
+import Copy from "./Copy";
 const BankCard = ({
   account,
   userName,
@@ -12,7 +13,10 @@ const BankCard = ({
 }: CreditCardProps) => {
   return (
     <div className="flex flex-col">
-      <Link href="/" className="bank-card">
+      <Link
+        href={`/transaction-history/?id=${account.appwriteItemId}`}
+        className="bank-card"
+      >
         <div className="bank-card_content">
           <div>
             <h1 className="text-16 font-semibold text-white">{userName}</h1>
@@ -48,6 +52,8 @@ const BankCard = ({
           className="absolute top-0 left-0"
         />
       </Link>
+
+      {showBalance && <Copy title={account?.sharaebleId} />}
     </div>
   );
 };
