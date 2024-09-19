@@ -41,7 +41,7 @@ export const signIn = async ({ email, password }: signInProps) => {
     const { account } = await createAdminClient();
     const session = await account.createEmailPasswordSession(email, password);
 
-    cookies().set("appwrite-session", session.secret, {
+    cookies().set("my-custom-session", session.secret, {
       path: "/",
       httpOnly: true,
       sameSite: "strict",
@@ -96,7 +96,7 @@ export const signUp = async ({ password, ...userData }: SignUpParams) => {
 
     const session = await account.createEmailPasswordSession(email, password);
 
-    cookies().set("appwrite-session", session.secret, {
+    cookies().set("my-custom-session", session.secret, {
       path: "/",
       httpOnly: true,
       sameSite: "strict",
@@ -127,7 +127,7 @@ export const logoutAccount = async () => {
   try {
     const { account } = await createSessionClient();
 
-    cookies().delete("appwrite-session");
+    cookies().delete("my-custom-session");
 
     await account.deleteSession("current");
   } catch (error) {

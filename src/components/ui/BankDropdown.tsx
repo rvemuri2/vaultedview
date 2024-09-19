@@ -12,7 +12,7 @@ import {
   SelectItem,
   SelectLabel,
   SelectTrigger,
-} from "/src/components/ui/select";
+} from "./select.tsx";
 import { formUrlQuery, formatAmount } from "/lib/utils";
 
 export const BankDropdown = ({
